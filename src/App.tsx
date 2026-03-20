@@ -44,7 +44,7 @@ function App() {
   return (
     <div className="relative">
       {/* Navigation */}
-      <Navigation isTransparent={true} />
+      <Navigation />
 
       {/* Main Content */}
       <main className="relative">

@@ -1,10 +1,6 @@
 import { useState, useEffect } from 'react';
 
-interface NavigationProps {
-  isTransparent?: boolean;
-}
-
-const Navigation = ({ isTransparent = true }: NavigationProps) => {
+const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
 

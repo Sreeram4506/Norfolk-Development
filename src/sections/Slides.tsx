@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ChevronDown } from 'lucide-react';
 
 interface Slide {
@@ -64,28 +64,6 @@ const Slides = () => {
   const [isAnimating, setIsAnimating] = useState(false);
   const [showContent, setShowContent] = useState(true);
   const sectionRef = useRef<HTMLElement>(null);
-  const isScrolling = useRef(false);
-
-  const goToSlide = useCallback((index: number) => {
-    if (isAnimating || index === currentSlide) return;
-    
-    setIsAnimating(true);
-    setShowContent(false);
-    
-    setTimeout(() => {
-      setCurrentSlide(index);
-      setTimeout(() => {
-        setShowContent(true);
-        setIsAnimating(false);
-      }, 100);
-    }, 300);
-  }, [currentSlide, isAnimating]);
-
-  const nextSlide = useCallback(() => {
-    if (currentSlide < slides.length - 1) {
-      goToSlide(currentSlide + 1);
-    }
-  }, [currentSlide, goToSlide]);
 
   useEffect(() => {
     const handleScroll = () => {
