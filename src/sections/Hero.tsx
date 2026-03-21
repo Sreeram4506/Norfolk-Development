@@ -7,6 +7,7 @@ const Hero = () => {
 
   useEffect(() => {
     if (videoRef.current) {
+      videoRef.current.currentTime = 6;
       videoRef.current.play().catch(() => {
         // Autoplay was prevented
       });

@@ -125,6 +125,25 @@ const Contact = () => {
             journey together begins here.
           </p>
 
+          <div
+            className={`flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 mb-12 transition-all duration-1000 delay-300 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
+          >
+            <a href="tel:7812232490" className="flex items-center gap-3 text-black hover:text-[#e31e24] transition-colors group">
+              <div className="w-10 h-10 border border-black/10 rounded-full flex items-center justify-center group-hover:border-[#e31e24] transition-colors">
+                <Phone size={18} />
+              </div>
+              <span className="font-semibold tracking-wider">781-223-2490</span>
+            </a>
+            <a href="mailto:norfolkdevelopmentllc@gmail.com" className="flex items-center gap-3 text-black hover:text-[#e31e24] transition-colors group">
+              <div className="w-10 h-10 border border-black/10 rounded-full flex items-center justify-center group-hover:border-[#e31e24] transition-colors">
+                <Mail size={18} />
+              </div>
+              <span className="font-semibold tracking-wider">norfolkdevelopmentllc@gmail.com</span>
+            </a>
+          </div>
+
           {/* Tabs */}
           <div
             className={`flex flex-wrap justify-center gap-4 mb-12 transition-all duration-1000 delay-300 ${
@@ -270,15 +289,21 @@ const Contact = () => {
               />
             </div>
 
-            {/* Copyright & Phone */}
+            {/* Copyright & Contact Info */}
             <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-12">
               <p className="text-sm text-white/50">
                 © {new Date().getFullYear()} Norfolk Development. All rights reserved.
               </p>
-              <a href="tel:7812232490" className="text-sm text-white/70 hover:text-white transition-colors flex items-center gap-2">
-                <Phone size={14} />
-                781-223-2490
-              </a>
+              <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-8">
+                <a href="tel:7812232490" className="text-sm text-white/70 hover:text-white transition-colors flex items-center gap-2">
+                  <Phone size={14} />
+                  781-223-2490
+                </a>
+                <a href="mailto:norfolkdevelopmentllc@gmail.com" className="text-sm text-white/70 hover:text-white transition-colors flex items-center gap-2">
+                  <Mail size={14} />
+                  norfolkdevelopmentllc@gmail.com
+                </a>
+              </div>
             </div>
 
             {/* Links */}
